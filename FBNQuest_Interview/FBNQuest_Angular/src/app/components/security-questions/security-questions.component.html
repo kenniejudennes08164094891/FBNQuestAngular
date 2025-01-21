@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>Security Questions</h2>
+    <form [formGroup]="securityForm" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+      <!-- Security Question 1 -->
+      <div class="form-group">
+        <label for="question1">Security Question 1:</label>
+        <select formControlName="question1" class="form-control" id="question1">
+          <option value="" disabled>Select a question</option>
+          <option *ngFor="let question of securityQuestions" [value]="question">{{ question }}</option>
+        </select>
+        <div *ngIf="securityForm.get('question1')?.touched && securityForm.get('question1')?.invalid" class="error">
+          Security Question 1 is required.
+        </div>
+      </div>
+  
+      <!-- Answer to Security Question 1 -->
+      <div class="form-group">
+        <label for="answer1">Answer to Security Question 1:</label>
+        <input formControlName="answer1" class="form-control" id="answer1" type="text" />
+        <div *ngIf="securityForm.get('answer1')?.touched && securityForm.get('answer1')?.invalid" class="error">
+          Answer to Security Question 1 is required.
+        </div>
+      </div>
+  
+      <!-- Security Question 2 -->
+      <div class="form-group">
+        <label for="question2">Security Question 2:</label>
+        <select formControlName="question2" class="form-control" id="question2">
+          <option value="" disabled>Select a question</option>
+          <option *ngFor="let question of securityQuestions" [value]="question">{{ question }}</option>
+        </select>
+        <div *ngIf="securityForm.get('question2')?.touched && securityForm.get('question2')?.invalid" class="error">
+          Security Question 2 is required.
+        </div>
+      </div>
+  
+      <!-- Answer to Security Question 2 -->
+      <div class="form-group">
+        <label for="answer2">Answer to Security Question 2:</label>
+        <input formControlName="answer2" class="form-control" id="answer2" type="text" />
+        <div *ngIf="securityForm.get('answer2')?.touched && securityForm.get('answer2')?.invalid" class="error">
+          Answer to Security Question 2 is required.
+        </div>
+      </div>
+
+    </form>
+  </div>
+  

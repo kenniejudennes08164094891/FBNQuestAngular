@@ -1,0 +1,59 @@
+<div class="form-container">
+  <form [formGroup]="personalDetailsForm" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <h2 class="form-title">Personal Details</h2>
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input
+        id="firstName"
+        formControlName="firstName"
+        type="text"
+        placeholder="Enter your first name"
+      />
+      <div *ngIf="personalDetailsForm.get('firstName')?.touched && personalDetailsForm.get('firstName')?.invalid" class="error">
+        First Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input
+        id="lastName"
+        formControlName="lastName"
+        type="text"
+        placeholder="Enter your last name"
+      />
+      <div *ngIf="personalDetailsForm.get('lastName')?.touched && personalDetailsForm.get('lastName')?.invalid" class="error">
+        Last Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input
+        id="dob"
+        formControlName="dob"
+        type="date"
+        placeholder="Enter your date of birth"
+      />
+      <div *ngIf="personalDetailsForm.get('dob')?.touched && personalDetailsForm.get('dob')?.hasError('invalidDateFormat')" class="error">
+        Invalid date format. Please use YYYY-MM-DD.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label>
+      <input
+        id="phoneNumber"
+        formControlName="phoneNumber"
+        type="text"
+        placeholder="Enter your phone number"
+      />
+      <div *ngIf="personalDetailsForm.get('phoneNumber')?.touched && personalDetailsForm.get('phoneNumber')?.hasError('invalidPhoneNumber')" class="error">
+        Invalid phone number. It must be 10 digits.
+      </div>
+    </div>
+
+    <button type="submit" class="bg-[#3f51b5]" [disabled]="personalDetailsForm.invalid">Submit</button>
+  </form>
+</div>

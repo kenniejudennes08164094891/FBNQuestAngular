@@ -1,0 +1,16 @@
+<body>
+    <div class="list-container">
+      <h2>Final summary</h2>
+      <ul class="styled-list">
+        <li class="list-item" *ngFor="let item of dataArray">
+          <span class="icon">&#10004;</span>
+          <span class="task-name">
+            <b>{{item.key}}</b>
+          </span> &nbsp;&nbsp;
+          <span class="task-name">{{item.value ?? "N/A"}}</span>
+        </li>
+      </ul>
+
+      <button (click)="submit()" type="submit" class="bg-[#3f51b5]">Submit</button>
+    </div>
+  </body>

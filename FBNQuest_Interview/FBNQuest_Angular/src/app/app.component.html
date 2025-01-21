@@ -1,0 +1,85 @@
+<body>
+  <mat-toolbar class="mat-toolbar">
+    <span>Welcome to FBN Quest Angular Interview</span>
+  </mat-toolbar>
+  
+  
+  <div class="min-h-screen flex items-center justify-center bg-cover bg-center" >
+    
+    <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-xl w-full max-w-xl">
+      <mat-stepper #stepper>
+        <!-- Step 1 -->
+        <mat-step>
+          <p class="text-sm text-gray-600">Note: After filling each form, press enter key to submit</p>
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your Account Informations</ng-template>
+            <app-account-info (dataToSend)="routeToNextStep($event)"></app-account-info>
+            <div class="flex justify-between">
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <!-- Step 2 -->
+        <mat-step>
+          <p class="text-sm text-gray-600">Note: After filling this form, press enter key to submit</p>
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out your Personal Details</ng-template>
+           <app-personal-details (dataToSend)="routeToNextStep($event)"></app-personal-details>
+            <div class="flex justify-between">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+           <!-- Step 3 -->
+           <mat-step>
+            <p class="text-sm text-gray-600">Note: After filling this form, press submit button</p>
+            <form [formGroup]="thirdFormGroup">
+              <ng-template matStepLabel>Fill out your Security Questions</ng-template>
+             <app-security-questions (dataToSend)="routeToNextStep($event)"></app-security-questions>
+              <div class="flex justify-between">
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+           <!-- Step 4 -->
+           <p class="text-sm text-gray-600">Note: After filling this form, press enter key to submit</p>
+           <mat-step [stepControl]="fourthFormGroup">
+            <form [formGroup]="fourthFormGroup">
+              <ng-template matStepLabel>Preview data submitted</ng-template>
+             <app-final-review (dataToSend)="routeToNextStep($event)"></app-final-review>
+              <div class="flex justify-between">
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+  
+        <!-- Final Step -->
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>You are now done.</p> <br>
+          <div class="alert-box">
+            <svg class="alert-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+              <span class="font-medium">Congratuations!</span> Your data has been submitted succesfully!
+            </div>
+          </div>
+          
+          <div class="flex justify-between">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+    </div>
+  </div>
+  
+</body>

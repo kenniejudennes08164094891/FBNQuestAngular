@@ -1,0 +1,101 @@
+/* General reset */
+
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+div {
+    font-family: 'Euclid Circular A';
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container for the list */
+  .list-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Heading styling */
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the list */
+  .styled-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  /* List item styling */
+  .list-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .list-item:hover {
+    background-color: #e6f7ff;
+    cursor: pointer;
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 24px;
+    color: #007bff;
+    margin-right: 15px;
+  }
+  
+  /* Task name styling */
+  .task-name {
+    font-size: 16px;
+    color: #333;
+    flex-grow: 1;
+  }
+  
+  /* Responsive design: making sure the list looks good on mobile */
+  @media (max-width: 600px) {
+    .list-container {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    .task-name {
+      font-size: 14px;
+    }
+  
+    .icon {
+      font-size: 20px;
+    }
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #004089;
+  }

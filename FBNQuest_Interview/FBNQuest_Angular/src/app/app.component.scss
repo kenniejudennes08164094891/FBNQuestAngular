@@ -1,0 +1,51 @@
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+body {
+    font-family: 'Euclid Circular A';
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  
+.mat-toolbar{
+    font-family: 'Euclid Circular A';
+    background-color: #3f51b5;
+    color:white
+}
+
+
+/* Alert box container */
+.alert-box {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    font-size: 14px;
+    color: #1F2937; /* text-gray-800 */
+    border: 1px solid #D1D5DB; /* border-gray-300 */
+    border-radius: 8px;
+    background-color: #F9FAFB; /* bg-gray-50 */
+  }
+  
+  .alert-box svg.alert-icon {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px; /* me-3 (margin-right) */
+  }
+  
+  .alert-box .font-medium {
+    font-weight: 500;
+  }
+  
+  /* Dark theme styling */
+  .dark .alert-box {
+    background-color: #2D3748; /* dark:bg-gray-800 */
+    color: #E2E8F0; /* dark:text-gray-300 */
+    border-color: #4A5568; /* dark:border-gray-600 */
+  }
+  
+  .dark .alert-box svg.alert-icon {
+    color: #E2E8F0; /* To match the text color in dark theme */
+  }
+  
